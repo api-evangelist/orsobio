@@ -1,0 +1,106 @@
+generated: '2026-08-04'
+method: probed
+source: live probes of https://orsobio.com/.well-known/* and the API-discovery paths on 2026-08-04
+host: https://orsobio.com
+result: none
+note: >-
+  No /.well-known/ discovery document is published on orsobio.com. Two statuses are recorded per
+  path because the origin (SiteGround, nginx) answers automated requests from our egress with an
+  HTTP 202 CAPTCHA interstitial (`sg-captcha: challenge`, `x-robots-tag: noindex`) rather than the
+  real response. `status` is the code our probe actually received; `resolved` is what the path
+  really returns once served — checked through a public reader service rather than by defeating the
+  challenge, which this pipeline does not do. Every path resolved to the site's WordPress 404 page.
+  There is no security.txt, no OIDC or OAuth metadata, no api-catalog, no ai-plugin.json and no A2A
+  agent card at either the canonical or the legacy path.
+documents:
+- path: /.well-known/security.txt
+  status: 202
+  resolved: 404
+  present: false
+- path: /.well-known/openid-configuration
+  status: 202
+  resolved: 404
+  present: false
+- path: /.well-known/oauth-authorization-server
+  status: 202
+  resolved: 404
+  present: false
+- path: /.well-known/api-catalog
+  status: 202
+  resolved: 404
+  present: false
+- path: /.well-known/ai-plugin.json
+  status: 202
+  resolved: 404
+  present: false
+- path: /.well-known/agent-card.json
+  status: 202
+  resolved: 404
+  present: false
+- path: /.well-known/agent.json
+  status: 202
+  resolved: 404
+  present: false
+- path: /llms.txt
+  status: 202
+  resolved: 404
+  present: false
+spec_discovery:
+  note: >-
+    Contract discovery (pipeline STEP 0b) run against orsobio.com and every plausible API host. No
+    OpenAPI, Swagger, GraphQL SDL, AsyncAPI or MCP endpoint exists.
+  probes:
+  - path: /openapi.json
+    status: 202
+    resolved: 404
+  - path: /openapi.yaml
+    status: 202
+    resolved: 404
+  - path: /swagger.json
+    status: 202
+    resolved: 404
+  - path: /api-docs
+    status: 202
+    resolved: 404
+  - path: /docs
+    status: 202
+    resolved: 404
+  - path: /redoc
+    status: 202
+    resolved: 404
+  hosts:
+  - host: api.orsobio.com
+    dns: NXDOMAIN
+  - host: developer.orsobio.com
+    dns: NXDOMAIN
+  - host: docs.orsobio.com
+    dns: NXDOMAIN
+  - host: portal.orsobio.com
+    dns: NXDOMAIN
+  - host: app.orsobio.com
+    dns: NXDOMAIN
+  - host: status.orsobio.com
+    dns: NXDOMAIN
+  - host: trust.orsobio.com
+    dns: NXDOMAIN
+  github_org:
+    url: https://api.github.com/orgs/orsobio
+    status: 404
+robots:
+  url: https://orsobio.com/robots.txt
+  sitemap: https://orsobio.com/sitemap_index.xml
+  crawl_delay: 10
+  disallow:
+  - /wp-admin/
+  - /wp-json/
+  - /readme.html
+  - /refer/
+  - /wp-includes/
+  - /login-php
+  - /xmlrpc.php
+  - /wp-content/plugins/
+  note: >-
+    The only machine-readable surface the site exposes is its own WordPress CMS route index under
+    /wp-json/, which robots.txt explicitly disallows. This pipeline honours robots.txt, so that
+    surface is neither harvested nor modelled as an API here. It is a content-management interface
+    for orsobio.com, not a developer product OrsoBio offers.

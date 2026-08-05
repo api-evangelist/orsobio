@@ -1,7 +1,24 @@
 aid: orsobio
 name: OrsoBio
-description: 'OrsoBio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+image: https://orsobio.com/wp-content/uploads/2022/10/orso-bio.png
+description: >-
+  OrsoBio is a privately held, clinical-stage biopharmaceutical company founded in 2021 and
+  headquartered in Palo Alto, California, developing first-in-class oral therapies that restore
+  energy homeostasis in patients living with severe metabolic disorders — obesity, type 2 diabetes,
+  severe dyslipidemias, lipodystrophies and MASH. The name is drawn from the metabolic adaptability
+  of bears ("orso" in Italian). Its pipeline is led by three mitochondrial protonophores — TLC-6740,
+  TLC-1180 and TLC-1235 — intended to increase energy expenditure and improve metabolic and
+  cardiovascular health, alongside an LXR inverse agonist (TLC-2716) for severe hypertriglyceridemia
+  and MASH, an ACC2 inhibitor (TLC-3595) for insulin sensitivity in type 2 diabetes, and an ACMSD
+  inhibitor to augment NAD+ biosynthesis in metabolic and inflammatory liver and kidney disorders.
+  The company closed an oversubscribed $67 million Series B in September 2024, co-led by Ascenta
+  Capital and Woodline Partners with participation from Samsara BioCapital, Enavate Sciences and
+  Longitude Capital. OrsoBio publishes a corporate site covering its science, pipeline, team, board,
+  publications, events and press releases, but runs no developer program: no API documentation, no
+  SDKs, no developer portal, no GitHub organisation and no machine-readable API contract of any
+  kind. The only machine-readable surface on orsobio.com is the site's own WordPress CMS route
+  index, which the site's robots.txt explicitly disallows at /wp-json/ and which is therefore not
+  harvested or catalogued here.
 url: https://raw.githubusercontent.com/api-evangelist/orsobio/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +29,14 @@ created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
+- Biotechnology
+- Pharmaceuticals
+- Life Sciences
+- Metabolic Disease
+- Obesity
+- Clinical Trials
+- Drug Development
+- Healthcare
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +44,57 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/orsobio-domain-security.yml
 - type: Website
+  url: https://orsobio.com/
+- type: About
+  url: https://orsobio.com/about/
+- type: Science
+  url: https://orsobio.com/science/
+- type: Pipeline
+  url: https://orsobio.com/our-pipeline/
+- type: Team
+  url: https://orsobio.com/team/
+- type: News
+  url: https://orsobio.com/news/
+- type: Blog
+  url: https://orsobio.com/news/
+- type: BlogRSS
+  url: https://orsobio.com/feed/
+- type: PrivacyPolicy
+  url: https://orsobio.com/privacy-policy/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/orsobio/
+- type: Twitter
+  url: https://twitter.com/OrsoBio
+- type: Instagram
+  url: https://www.instagram.com/orsobio/
+- type: SecondaryMarket
   url: https://forgeglobal.com/orsobio_stock/
+- type: WellKnown
+  url: well-known/orsobio-well-known.yml
+- type: LLMsTxt
+  url: llms/orsobio-llms.txt
+x-enrichment:
+  date: '2026-08-04'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    OrsoBio is a clinical-stage biopharmaceutical company with no developer program — no api.,
+    developer., docs., portal. or status. host resolves for orsobio.com, no orsobio GitHub
+    organisation exists, and every spec path and /.well-known/ document on the corporate site is
+    answered by a SiteGround CAPTCHA interstitial that resolves to the site's WordPress 404 page,
+    leaving only the CMS routes at /wp-json/ that the site's own robots.txt disallows.
+  evidence:
+  - url: https://orsobio.com/openapi.json
+    status: 202
+  - url: https://orsobio.com/.well-known/agent-card.json
+    status: 202
+  - url: https://api.github.com/orgs/orsobio
+    status: 404
+  checked: '2026-08-04'
