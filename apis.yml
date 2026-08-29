@@ -1,5 +1,16 @@
 aid: orsobio
 name: OrsoBio
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://orsobio.com/wp-content/uploads/2022/10/orso-bio.png
 description: >-
   OrsoBio is a privately held, clinical-stage biopharmaceutical company founded in 2021 and
