@@ -3,51 +3,16 @@ method: probed
 source: live probes of https://orsobio.com/.well-known/* and the API-discovery paths on 2026-08-04
 host: https://orsobio.com
 result: none
-note: >-
-  No /.well-known/ discovery document is published on orsobio.com. Two statuses are recorded per
-  path because the origin (SiteGround, nginx) answers automated requests from our egress with an
-  HTTP 202 CAPTCHA interstitial (`sg-captcha: challenge`, `x-robots-tag: noindex`) rather than the
-  real response. `status` is the code our probe actually received; `resolved` is what the path
-  really returns once served — checked through a public reader service rather than by defeating the
-  challenge, which this pipeline does not do. Every path resolved to the site's WordPress 404 page.
-  There is no security.txt, no OIDC or OAuth metadata, no api-catalog, no ai-plugin.json and no A2A
-  agent card at either the canonical or the legacy path.
-documents:
-- path: /.well-known/security.txt
-  status: 202
-  resolved: 404
-  present: false
-- path: /.well-known/openid-configuration
-  status: 202
-  resolved: 404
-  present: false
-- path: /.well-known/oauth-authorization-server
-  status: 202
-  resolved: 404
-  present: false
-- path: /.well-known/api-catalog
-  status: 202
-  resolved: 404
-  present: false
-- path: /.well-known/ai-plugin.json
-  status: 202
-  resolved: 404
-  present: false
-- path: /.well-known/agent-card.json
-  status: 202
-  resolved: 404
-  present: false
-- path: /.well-known/agent.json
-  status: 202
-  resolved: 404
-  present: false
-- path: /llms.txt
-  status: 202
-  resolved: 404
-  present: false
+note: 'No /.well-known/ discovery document is published on orsobio.com. Two statuses are recorded per
+  path because the origin (SiteGround, nginx) answers automated requests from our egress with an HTTP
+  202 CAPTCHA interstitial (`sg-captcha: challenge`, `x-robots-tag: noindex`) rather than the real response.
+  `status` is the code our probe actually received; `resolved` is what the path really returns once served
+  — checked through a public reader service rather than by defeating the challenge, which this pipeline
+  does not do. Every path resolved to the site''s WordPress 404 page. There is no security.txt, no OIDC
+  or OAuth metadata, no api-catalog, no ai-plugin.json and no A2A agent card at either the canonical or
+  the legacy path.'
 spec_discovery:
-  note: >-
-    Contract discovery (pipeline STEP 0b) run against orsobio.com and every plausible API host. No
+  note: Contract discovery (pipeline STEP 0b) run against orsobio.com and every plausible API host. No
     OpenAPI, Swagger, GraphQL SDL, AsyncAPI or MCP endpoint exists.
   probes:
   - path: /openapi.json
@@ -99,8 +64,29 @@ robots:
   - /login-php
   - /xmlrpc.php
   - /wp-content/plugins/
-  note: >-
-    The only machine-readable surface the site exposes is its own WordPress CMS route index under
-    /wp-json/, which robots.txt explicitly disallows. This pipeline honours robots.txt, so that
-    surface is neither harvested nor modelled as an API here. It is a content-management interface
-    for orsobio.com, not a developer product OrsoBio offers.
+  note: The only machine-readable surface the site exposes is its own WordPress CMS route index under
+    /wp-json/, which robots.txt explicitly disallows. This pipeline honours robots.txt, so that surface
+    is neither harvested nor modelled as an API here. It is a content-management interface for orsobio.com,
+    not a developer product OrsoBio offers.
+hosts:
+- host: https://orsobio.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 202
+  - path: /.well-known/openid-configuration
+    status: 202
+  - path: /.well-known/oauth-authorization-server
+    status: 202
+  - path: /.well-known/api-catalog
+    status: 202
+  - path: /.well-known/ai-plugin.json
+    status: 202
+  - path: /.well-known/agent-card.json
+    status: 202
+  - path: /.well-known/agent.json
+    status: 202
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
