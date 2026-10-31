@@ -64,5 +64,81 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-OrsoBio is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/orsobio_stock/
+OrsoBio is a privately held, clinical-stage biopharmaceutical company founded in 2021 and headquartered in Palo Alto, California, developing first-in-class oral therapies that restore energy homeostasis in patients living with severe metabolic disorders — obesity, type 2 diabetes, severe dyslipidemias, lipodystrophies and MASH. The name is drawn from the metabolic adaptability of bears ("orso" in Italian). Its pipeline is led by three mitochondrial protonophores — TLC-6740, TLC-1180 and TLC-1235 — intended to increase energy expenditure and improve metabolic and cardiovascular health, alongside an LXR inverse agonist (TLC-2716) for severe hypertriglyceridemia and MASH, an ACC2 inhibitor (TLC-3595) for insulin sensitivity in type 2 diabetes, and an ACMSD inhibitor to augment NAD+ biosynthesis in metabolic and inflammatory liver and kidney disorders. The company closed an oversubscribed $67 million Series B in September 2024, co-led by Ascenta Capital and Woodline Partners with participation from Samsara BioCapital, Enavate Sciences and Longitude Capital. OrsoBio publishes a corporate site covering its science, pipeline, team, board, publications, events and press releases, but runs no developer program: no API documentation, no SDKs, no developer portal, no GitHub organisation and no machine-readable API contract of any kind. The only machine-readable surface on orsobio.com is the site's own WordPress CMS route index, which the site's robots.txt explicitly disallows at /wp-json/ and which is therefore not harvested or catalogued here.
+
+**Areas:** Company · Biotechnology · Pharmaceuticals · Life Sciences · Metabolic Disease · Obesity · Clinical Trials · Drug Development · Healthcare
+
+## OrsoBio on APIs.io
+
+Everything profiled for OrsoBio is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/orsobio/](https://apis.io/providers/orsobio/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Orsobio Domain Security](https://apis.io/security/orsobio/orsobio-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://orsobio.com/)
+- [Blog](https://orsobio.com/news/)
+- [Privacy policy](https://orsobio.com/privacy-policy/)
+
+## API Evangelist rating
+
+**Kin Score 4.4** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 2.9** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 4.7** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/orsobio/](https://apis.io/providers/orsobio/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for OrsoBio: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/orsobio/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
